@@ -1,4 +1,4 @@
-import Categorias
+from Categorias import *
 from Framework import Login #ejemplo de import en carpeta
 
 listaAdmin=[207960457,"bdrojasc@est.utn.ac.cr"]
@@ -52,7 +52,6 @@ def administrador():
           '1. pendiente de asignar ')
 
 def clientes():
-
     print('---- TecnoSTORE ----\n')
     print()
     print('1. Computadoras.\n',
@@ -67,7 +66,7 @@ def clientes():
         except:
             print('Ingrese solo valores numericos!')
         if opcion==1:
-            print('LISTA COMPUTADORAS')
+            verListaPc()
         elif opcion==2:
             print('LISTA TELEFONOS')
         elif opcion==3:

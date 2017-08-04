@@ -9,6 +9,10 @@ class Electronico:
         self.marca=pMarca
         self.modelo=pModelo
         self.precio=pPrecio
+    def __str__(self):
+        return ("Codigo {0} Marca {1} Modelo {2} Precio{3}"
+                "".format(self.codigo,self.marca, self.modelo,self.precio))
+
 
 class Computadora(Electronico):
     __impuesto=0.10
@@ -85,6 +89,7 @@ toshiba1=Computadora(131,'TOSHIBA',"ZR10","2010","AMD APU A10","16GB","SSD 256GB
 toshiba2=Computadora(132,'TOSHIBA',"CR7","2011","INTEL CORE i7","8GB","HDD 1TB",'NEGRO','16''',675)
 asus1=Computadora(131,'ASUS','PRO GAMING Z','2017','INTEL CORE i7 HQ','24GB','1TB','BLANCA','17''',3479)
 asus2=Computadora(132,'ASUS','AORUS X7 V6','2016','INTEL CORE i7','12GB','500GB SSD','NEGRO','15''',1929)
+
 listaPc=[dell1,dell2,dell3, mac1,mac2,mac3,toshiba1,toshiba2,asus1,asus2]
 
 #Telefonos en catalogo existente
@@ -97,6 +102,7 @@ apple3=Telefono(223,'APPLE','NEGRO','IPHONE 6 SE','32 GB','4G LTE','1GB','22MPX'
 huawei1=Telefono(111,'HUAWEI','GRIS','P10','32GB','2G/3G/4G LTE','4GB','12MPX','ANDROID 4.0',500)
 huawei2=Telefono(121,'HUAWEI','GRIS','P9','32GB','2G/3G/4G LTE','3GB','12MPX','Android 6 + HUAWEI Emotion UI 4.1',479)
 huawei3=Telefono(131,'HUAWEI','PLATEADO','MATE 9','64GB','2G/3G/4G LTE','4GB','12MPX','Android 7  + HUAWEI Emotion UI 5.0',579)
+
 listaTelefonos=[samsung1,samsung2,samsung3,apple1,apple2,apple3, huawei1,huawei2,huawei3]
 
 #Accesorios en catalogo existente
@@ -111,5 +117,11 @@ cargadorPc=nuevoAccesorio(816,'UNIVERSALES',35,'VARIABLE','NEGROS','N/A')
 estuchePc=nuevoAccesorio(817,'CLIP',22,'N/A','A ELEGIR','15''')
 parlantes=nuevoAccesorio(818,'LOGITEC', 65, 'USB/3.5','NEGROS','N/A')
 heatset=nuevoAccesorio(819,'KRACKEN',39,'USB','VARIADO','N/A')
+
 listaAccesorios=[speaker,heatphones,cargadorPortatil,mouse1,mouse2,discoExterno,cargadorTelefono,cargadorPc,estuchePc,parlantes,heatset,]
 
+def verListaPc():
+    for i in listaPc:
+        print('--- Informacion Computadoras ---\n',str(i.codigo)+'\n',i.marca+'\n',i.modelo+'\n',
+              i.anio+'\n',i.procesador+'\n',i.ram,i.discoDuro,i.tamano,str(i.precio))
+def seleccionar():
